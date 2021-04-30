@@ -2,7 +2,8 @@
     "name": "platform",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "palette": "*"
     },
     "files": [
         "main.blocks",
