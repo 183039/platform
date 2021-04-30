@@ -5,36 +5,41 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
     jump = 0
 })
 function level_4 () {
-    tiles.setTilemap(tilemap`level5`)
+    tiles.setTilemap(tilemap`level9`)
 }
 function level_5 () {
-    tiles.setTilemap(tilemap`level5`)
+    tiles.setTilemap(tilemap`level10`)
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
+    level_5()
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (jump < 1) {
         mySprite.vy = -100
         jump += 1
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile7`, function (sprite, location) {
+    level_3()
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) {
     level_2()
-})
-sprites.onOverlap(SpriteKind.Player, SpriteKind.cloud, function (sprite, otherSprite) {
-	
 })
 function level_2 () {
     tiles.setTilemap(tilemap`level4`)
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile8`, function (sprite, location) {
+    level_4()
+})
 function level_1 () {
     tiles.setTilemap(tilemap`level2`)
-    tiles.placeOnRandomTile(mySprite, assets.tile`myTile5`)
 }
 function level_3 () {
-    tiles.setTilemap(tilemap`level5`)
+    tiles.setTilemap(tilemap`level8`)
 }
 let jump = 0
 let mySprite: Sprite = null
-game.showLongText("12", DialogLayout.Bottom)
+game.showLongText("omnomnom", DialogLayout.Bottom)
 mySprite = sprites.create(img`
     .........................
     .........................
